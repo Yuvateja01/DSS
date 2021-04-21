@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    {% load crispy_forms_tags %}
+    {% if user.is_authenticated %}
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+    <form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+        <br>
+        <br>
+        <br>
+        <div id="div_id_title" class="form-group"> <label for="id_title" class=" requiredField text-white">
+                Title<span class="asteriskField text-danger">*</span> </label> <div class=""> <input type="text" name="title" maxlength="50" class="textinput textInput form-control" required="" id="id_title"> </div> </div>
+        <div id="div_id_image" class="form-group"> <label for="id_image" class=" requiredField text-white">
+                Image<span class="asteriskField text-danger">*</span> </label> <div class=""> <input type="file" name="image" accept="image/*" class="clearablefileinput form-control" required="" id="id_image"> </div> </div>
+        <div id="div_id_description" class="form-group"> <label for="id_description" class=" requiredField text-white">
+                Description<span class="asteriskField text-danger">*</span> </label> <div class=""> <input type="text" name="description" maxlength="250" class="textinput textInput form-control" required="" id="id_description"> </div> </div>
+
+    <button type="submit" class="btn btn-success">Save</button><br>
+
+    {% else %}
+        <h1>login</h1>
+    {% endif %}
+</form>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body class="bg-dark ">
+  <div class="container ">
+  <div class="row h-100">
+  <div class="col-md-6 mx-auto my-auto">
+  <form method="post">
+    {% csrf_token %}
+<div id="div_id_username" class="form-group "> <label for="id_username" class=" requiredField text-white">
+                Username<span class="asteriskField text-danger">*</span> </label> <div class=""> <input type="text" name="username" autofocus="" class="textinput textInput form-control" required="" id="id_username"> </div> </div> <div id="div_id_password" class="form-group"> <label for="id_password" class=" requiredField text-white">
+                Password<span class="asteriskField text-danger">*</span> </label> <div class=""> <input type="password" name="password" class="textinput textInput form-control" required="" id="id_password"> </div> </div>
+
+    <button type="submit" class="btn btn-success">Login</button><br>
+      <a class="text-white" href="/register">Not a Member yet??</a><br>
+      <a class="text-white" href={% url 'forgotpassword' %}>Forgot Password</a>
+
+
+  </form>
+  </div>
+  </div>
+  </div>
+
+
+</body></html>
